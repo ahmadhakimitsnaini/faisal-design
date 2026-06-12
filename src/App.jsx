@@ -12,12 +12,7 @@ const Home = () => {
       </section>
 
       {/* Clients / Brand Logos with Pixel Animation */}
-      <section className="px-4">
-        <p className="text-center text-xs font-bold uppercase tracking-[0.3em] text-vintage-gray mb-8">
-          Trusted by world-class brands
-        </p>
-        <PixelLogoGrid />
-      </section>
+      <PixelLogoGrid />
 
       {/* Featured Work - Portfolio Gallery */}
       <PortfolioGallery title="Featured Works" archiveButton={{ text: "View All Projects", href: "/work" }} />
