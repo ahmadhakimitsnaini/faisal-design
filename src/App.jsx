@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { PortfolioGallery } from './components/portfolio/PortfolioGallery';
 import { FeatureWithImageComparison } from './components/ui/FeatureWithImageComparison';
+import { PixelLogoGrid } from './components/ui/pixel-logo-grid';
 
 const Home = () => {
   return (
@@ -8,6 +9,14 @@ const Home = () => {
       {/* Hero Section with Image Comparison */}
       <section className="min-h-[70vh] flex flex-col justify-center">
         <FeatureWithImageComparison />
+      </section>
+
+      {/* Clients / Brand Logos with Pixel Animation */}
+      <section className="px-4">
+        <p className="text-center text-xs font-bold uppercase tracking-[0.3em] text-vintage-gray mb-8">
+          Trusted by world-class brands
+        </p>
+        <PixelLogoGrid />
       </section>
 
       {/* Featured Work - Portfolio Gallery */}

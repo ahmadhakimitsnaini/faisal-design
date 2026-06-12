@@ -86,5 +86,31 @@ Memastikan kualitas proyek sesuai standar spesifikasi PRD.
    - Implementasikan *Lazy Loading* (atribut `loading="lazy"`) pada gambar-gambar di bagian bawah *grid* portofolio.
    - Uji performa menggunakan ekstensi Google Lighthouse.
 
-3. **Uji Responsivitas Silang (Cross-Device Testing):**
-   - Periksa tata letak dan fungsionalitas di simulasi layar *Mobile*, *Tablet*, dan *Desktop* (menggunakan *Chrome DevTools*).
+   - Uji responsivitas silang (Cross-Device Testing): Periksa tata letak dan fungsionalitas di simulasi layar *Mobile*, *Tablet*, dan *Desktop* (menggunakan *Chrome DevTools*).
+
+---
+
+## Fase 6: Integrasi Komponen "Pixel Logo Grid" (Versi JSX)
+Fase ini berfokus pada pengintegrasian komponen animasi *canvas* ke dalam proyek dengan mempertahankan format JavaScript murni (`.jsx`), menghindari kompleksitas migrasi TypeScript.
+
+1. **Persiapan Struktur Direktori (Standar Shadcn):**
+   - Pastikan folder `src/components/ui/` telah tersedia. Direktori ini krusial untuk menampung komponen fundamental yang independen dan dapat digunakan kembali (*reusable*).
+   - Buat file baru bernama `pixel-logo-grid.jsx` di dalam folder tersebut.
+
+2. **Konversi Kode (Dari TSX ke JSX):**
+   - **Hapus Deklarasi Tipe (Type Definitions):** Buang blok `type Pixel`, `type PixelCanvasProps`, dan `type LogoSvgProps`.
+   - **Hapus Parameter Type:** Bersihkan parameter fungsi dari sintaks TS. Contoh: ubah `(ctx: CanvasRenderingContext2D, ...)` menjadi `(ctx, ...)`.
+   - **Sesuaikan Hooks:** Ubah deklarasi *ref* yang ketat seperti `useRef<HTMLCanvasElement>(null)` menjadi sintaks bawaan React `useRef(null)`.
+   - **Sesuaikan Props:** Ubah deklarasi komponen `function PixelCanvas({ colors, gap, speed }: PixelCanvasProps)` menjadi `function PixelCanvas({ colors, gap = 5, speed = 30 })`.
+
+3. **Penyesuaian Dependency & Import Path:**
+   - Karena proyek ini tidak memiliki *Path Aliases* (`@/`), ubah baris impor utilitas bawaan Shadcn dari `import { cn } from "@/lib/utils";` menjadi jalur relatif: `import { cn } from "../../lib/utils";`.
+   - Pastikan library `clsx` dan `tailwind-merge` sudah terinstal di proyek sebagai penyokong fungsi `cn()`.
+
+4. **Pemasangan & Rendering Komponen:**
+   - Impor komponen `PixelCanvas` dan gabungan Logo (seperti `AirbnbLogo`, `NetflixLogo`) ke halaman utama atau bagian yang diinginkan (*Hero Section*).
+   - Elemen pembungkus (*parent container*) wajib diberi kelas Tailwind `relative`. Ini memastikan `PixelCanvas` (yang menggunakan `absolute inset-0`) menempati luas area yang tepat dan tidak tumpah ke bagian lain.
+
+5. **Pengujian Fungsional & Kinerja (QA):**
+   - Lakukan uji interaksi: Pastikan titik-titik kanvas menyebar keluar (*ripple-out*) dari tengah dengan benar saat di-*hover* dan kembali pudar saat kursor dijauhkan.
+   - Uji kinerja dan fitur aksesibilitas (*Reduced Motion*): Pastikan animasi melambat atau berhenti apabila pengguna mengaktifkan fitur kurangi gerakan (*prefers-reduced-motion*) pada sistem operasi mereka.
