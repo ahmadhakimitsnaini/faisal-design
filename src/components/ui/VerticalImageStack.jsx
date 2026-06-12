@@ -1,13 +1,16 @@
 import { useState, useCallback, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 
-import img1 from "../portfolio/asset-portofolio/1.jpeg";
-import img2 from "../portfolio/asset-portofolio/2.jpeg";
-import img3 from "../portfolio/asset-portofolio/3.jpeg";
-import img4 from "../portfolio/asset-portofolio/4.jpeg";
-import img5 from "../portfolio/asset-portofolio/5.jpeg";
-import img6 from "../portfolio/asset-portofolio/6.jpeg";
-import img7 from "../portfolio/asset-portofolio/7.jpeg";
+import img1 from "../portfolio/asset-portofolio/1.webp";
+import img2 from "../portfolio/asset-portofolio/2.webp";
+import img3 from "../portfolio/asset-portofolio/3.webp";
+import img4 from "../portfolio/asset-portofolio/4.webp";
+import img5 from "../portfolio/asset-portofolio/5.webp";
+import img6 from "../portfolio/asset-portofolio/6.webp";
+import img7 from "../portfolio/asset-portofolio/7.webp";
+import img8 from "../portfolio/asset-portofolio/8.webp";
+import img9 from "../portfolio/asset-portofolio/9.webp";
+import img10 from "../portfolio/asset-portofolio/10.webp";
 
 const images = [
   {
@@ -44,6 +47,21 @@ const images = [
     id: 7,
     src: img7,
     alt: "Portfolio Item 7",
+  },
+  {
+    id: 8,
+    src: img8,
+    alt: "Portfolio Item 8",
+  },
+  {
+    id: 9,
+    src: img9,
+    alt: "Portfolio Item 9",
+  },
+  {
+    id: 10,
+    src: img10,
+    alt: "Portfolio Item 10",
   },
 ];
 
