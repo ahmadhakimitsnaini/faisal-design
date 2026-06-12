@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { PortfolioGallery } from './components/portfolio/PortfolioGallery';
 import { FeatureWithImageComparison } from './components/ui/FeatureWithImageComparison';
 import { PixelLogoGrid } from './components/ui/pixel-logo-grid';
+import { AboutDesigner } from './components/ui/AboutDesigner';
 
 const Home = () => {
   return (
@@ -16,6 +17,9 @@ const Home = () => {
 
       {/* Featured Work - Portfolio Gallery */}
       <PortfolioGallery title="Featured Works" archiveButton={{ text: "View All Projects", href: "/work" }} />
+
+      {/* About Designer Section */}
+      <AboutDesigner />
     </div>
   );
 };
