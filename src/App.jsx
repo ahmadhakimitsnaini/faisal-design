@@ -1,8 +1,9 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import { PortfolioGallery } from './components/portfolio/PortfolioGallery';
 import { FeatureWithImageComparison } from './components/ui/FeatureWithImageComparison';
 import { PixelLogoGrid } from './components/ui/pixel-logo-grid';
 import { AboutDesigner } from './components/ui/AboutDesigner';
+import { Work } from './pages/Work';
 
 const Home = () => {
   return (
@@ -30,10 +31,12 @@ const App = () => {
       <div className="min-h-screen flex flex-col">
         <header className="py-8 px-12 border-b border-vintage-black/10">
           <nav className="flex justify-between items-center max-w-[1600px] mx-auto w-full">
-            <div className="font-serif font-bold text-3xl tracking-tighter uppercase">STD.</div>
+            <div className="font-serif font-bold text-3xl tracking-tighter uppercase">
+              <Link to="/">STD.</Link>
+            </div>
             <ul className="flex gap-8 text-base uppercase tracking-widest font-semibold text-vintage-gray">
-              <li className="hover:text-vintage-black transition-colors cursor-pointer">Work</li>
-              <li className="hover:text-vintage-black transition-colors cursor-pointer">About</li>
+              <li><Link to="/work" className="hover:text-vintage-black transition-colors cursor-pointer">Work</Link></li>
+              <li><Link to="/" className="hover:text-vintage-black transition-colors cursor-pointer">About</Link></li>
             </ul>
             <button className="hidden md:block bg-vintage-red text-vintage-cream px-8 py-3 uppercase tracking-wider text-base font-bold hover:bg-vintage-black transition-colors">
               Let's Work
@@ -44,6 +47,7 @@ const App = () => {
         <main className="flex-grow max-w-[1600px] mx-auto w-full px-12 py-16">
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/work" element={<Work />} />
           </Routes>
         </main>
 

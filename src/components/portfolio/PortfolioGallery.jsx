@@ -82,7 +82,7 @@ export function PortfolioGallery({
       className={`relative min-h-[80vh] py-16 px-4 ${className}`}
       id="archives"
     >
-      <div className="max-w-[1600px] mx-auto bg-vintage-black/5 backdrop-blur-sm rounded-2xl border border-vintage-black/10 overflow-hidden">
+      <div className="max-w-[1600px] mx-auto overflow-hidden">
         {/* Header Section */}
         <div className="relative z-10 text-center pt-24 pb-12 px-8">
           <h2 className="text-6xl md:text-8xl font-serif font-bold text-vintage-black mb-12 text-balance">

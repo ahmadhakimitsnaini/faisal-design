@@ -28,8 +28,7 @@ function FeatureWithImageComparison() {
 
           {/* Kolom Kanan: Vertical Image Stack */}
           <div className="w-full relative">
-            {/* Latar belakang aksen tipis (opsional) */}
-            <div className="absolute left-1/2 top-1/2 h-[400px] w-[400px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-vintage-red/5 blur-3xl pointer-events-none" />
+            {/* Latar belakang dihapus sesuai permintaan */}
             <VerticalImageStack />
           </div>
         </div>
